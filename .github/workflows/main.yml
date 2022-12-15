@@ -1,5 +1,16 @@
 name: Debugging with SSH
-
+on:
+  workflow_dispatch:
+    inputs:
+      arch:
+        description: "Build arch"
+        required: true
+        default: "x64 & arm64"
+        type: choice
+        options:
+        - x64
+        - arm64
+        - x64 & arm64
 jobs:
   build:
     runs-on: ubuntu-latest
